@@ -28,8 +28,8 @@ RUN \
     && rm -rf /usr/src/ioq3-master \
     && apk add --no-cache gettext
 
-COPY docker-entrypoint.sh /
+ENV PATH /usr/local/games/quake3:$PATH
 
 EXPOSE 27960 27960/udp
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["ioq3ded.x86_64"]
